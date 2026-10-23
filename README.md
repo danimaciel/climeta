@@ -1,26 +1,28 @@
-# GiraClima
-Roleta educativa para crianças de 8 a 12 anos, sobre clima, cidade e campo em Campinas. São 12 perguntas em quatro temas, sem pontuação.
+# GiraClima — jogos do clima de Campinas
+
+Dois jogos educativos para crianças de 8 a 12 anos, com a identidade visual do GiraClima.
+
+- **Memória do clima:** seis pares de cuidado e efeito. As cartas de um par têm imagens e textos diferentes. Cada acerto mostra uma explicação; tentativas incorretas podem ser refeitas sem limite.
+- **Velha do clima:** duas crianças compartilham a tela, como Sol e Chuva. Respondem a uma pergunta antes de marcar a casa; erros oferecem uma dica e nova tentativa. Vitória e empate têm encerramento e reinício.
 
 ## Executar
-Requer Node.js 20 ou superior. Sem dependências de aplicação.
+Requer Node.js 20 ou superior, sem dependências de aplicação.
 
 ```sh
-cd /workspace/climeta
 npm start
 ```
 
-O servidor usa a porta 3000 (ou `PORT`). Acesse a aplicação pelo encaminhamento de portas da sua ferramenta. As fontes externas são opcionais e possuem alternativas locais.
+Porta padrão 3000, configurável por `PORT`. O GitHub Pages publica a raiz da branch `main`: https://danimaciel.github.io/climeta/ . Recursos com caminhos relativos, sem fontes ou serviços externos obrigatórios. Não há coleta de dados nem persistência de partidas.
 
-## Estado
-Primeiro protótipo funcional. As ilustrações são esquemáticas e precisam de revisão visual e pedagógica. Fontes e limites da consulta estão no rodapé da aplicação. Nenhuma informação pessoal é coletada e o progresso fica apenas na sessão da página.
+## Validar
 
-## GitHub Pages
-O site é estático; não precisa do servidor Node.js no Pages. Em Settings → Pages, selecione Deploy from a branch, branch `main`, pasta `/ (root)` e Save. Os caminhos dos recursos são relativos para funcionar em `/climeta/`.
+```sh
+npm test
+```
 
-## Livro para TV
-Abra `tv.html` no navegador (também funciona diretamente como arquivo offline). São 16 telas em loop automático; padrão de 25 segundos por tela, ajustável para 20 ou 35. Espaço pausa; setas navegam; botão Tela cheia ou F11. Mova o mouse para exibir os controles. Use “Baixar offline” para salvar o HTML completo, com imagens incorporadas. A apresentação não tem áudio e usa fontes locais. Conecte um computador à TV por HDMI e desative a suspensão automática para o evento.
+Testes cobrem pares, embaralhamento, linhas vencedoras, empate e conteúdo das perguntas. A interface também foi verificada em Chromium headless: memória completa, tentativa incorreta, vitória e reinício da velha, dicas, troca de jogo e largura de celular (375 px), sem erros JavaScript.
 
-Narrativa e quatro ilustrações aproveitadas do livro Jequi fornecido pelo usuário; texto adaptado ao GiraClima. Conceitos apoiados na apresentação e na nota técnica fornecidas anteriormente. A tela sobre mudança climática explicita a contribuição humana; a tela sobre El Niño evita tratar projeções como certeza local. O PDF integral do plano climático municipal não foi consultado. Teste visual em TV real ainda necessário.
+## Conteúdo e histórico
+Temas adaptados dos materiais PESCO fornecidos pelo usuário; referências e limites no rodapé do site. Revisão com educadores e observação de crianças durante o evento são recomendadas para ajustar dificuldade e clareza.
 
-## Missão Campinas: Operação escola fresca
-Abra `missao.html` para jogar. Selecione árvore, jardim ou cobertura e toque em um espaço (ou arraste com mouse). Experimente as três ações e crie sombra no recreio para concluir. Há opção de desfazer e reiniciar; nenhuma informação é enviada. O jogo usa HTML/CSS/JavaScript locais, sem dependências. Os indicadores são qualitativos; árvores aparecem já crescidas para explicar seus efeitos. Testes de lógica: `npm test`. Validação visual em dispositivos reais ainda necessária.
+Roleta, livro de TV e missão da escola foram retirados da versão publicada. As versões anteriores permanecem no histórico Git, sem links ou arquivos dessas experiências no site atual.
